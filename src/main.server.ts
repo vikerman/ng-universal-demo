@@ -1,4 +1,5 @@
 import 'zone.js/dist/zone-node';
+import 'reflect-metadata';
 import { platformServer, renderModuleFactory } from '@angular/platform-server'
 import { enableProdMode } from '@angular/core'
 import { AppServerModule } from './app.server'
@@ -12,7 +13,7 @@ const app = express();
 
 app.engine('html', ngExpressEngine({
 	baseUrl: 'http://localhost:4200',
-	bootstrap: [AppServerModuleNgFactory]
+	bootstrap: [AppServerModule]
 }));
 
 app.set('view engine', 'html');

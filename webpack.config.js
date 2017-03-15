@@ -2,27 +2,14 @@ const ngtools = require('@ngtools/webpack');
 
 module.exports = {
 	entry: {
-		main: './src/main.server.ts'
+		main: './lib/main.server.js'
 	},
 	resolve: {
-      extensions: ['.ts', '.js']
+      extensions: ['.js']
     },
 	target: 'node',
 	output: {
 		path: 'dist',
 		filename: '[name].js'
 	},
-	plugins: [
-		new ngtools.AotPlugin({
-			tsConfigPath: './tsconfig.json',
-		})
-	],
-	module: {
-		rules: [
-			{
-              test: /\.ts$/,
-              loader: '@ngtools/webpack',
-            }
-		]
-	}
 }
